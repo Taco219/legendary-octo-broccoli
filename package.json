@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/Taco219/legendary-octo-broccoli#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "mongoose": "^4.12.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
