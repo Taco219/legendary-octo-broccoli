@@ -1,12 +1,12 @@
 import registerApi from './server.api';
-import { connect } from './server.mongoose';
+import { connectMongo } from './server.mongoose';
 
 const express = require('express');
 
 const app = express();
 
 const start = async () => {
-    if(await connect()){
+    if(await connectMongo()){
         const apiRoute = express.Router();
         registerApi(apiRoute);
 
