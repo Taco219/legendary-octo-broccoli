@@ -21,11 +21,11 @@ gulp.task('nodemon', function () {
 });
 
 gulp.task('babel', function () {
-    exec('babel ./src/server --out-dir ./out/server -dv --copy-files');
+    exec('babel ./server --out-dir ./out/server -dv --copy-files');
 });
 
 gulp.task('babel-watch', function () {
-    exec('babel ./src/server --out-dir ./out/server --watch -dv --copy-files', function (err, stdout, stderr) {
+    exec('babel ./server --out-dir ./out/server --watch -dv --copy-files', function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
     });
