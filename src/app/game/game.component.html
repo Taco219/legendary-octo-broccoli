@@ -1,0 +1,33 @@
+<div>
+    game works!
+    <div>
+        <button (click)="createGame()">Create</button>
+        <button (click)="getGame()">Get</button>
+        <div>
+            <button (click)="move('up')">Up</button>
+            <button (click)="move('down')">Down</button>
+            <button (click)="move('left')">Left</button>
+            <button (click)="move('right')">Right</button>
+
+        </div>
+    </div>
+
+    <div *ngIf="game._id">
+        <br>
+        Game
+        <br>
+        Goal:
+        {{game.goalXAxis}},
+        {{game.goalYAxis}}
+        <br>
+        {{player.type}}:
+        {{player.xAxis}},
+        {{player.yAxis}}
+
+        <div *ngFor="let thing of lsThings">
+            {{thing.type}}:
+            {{thing.xAxis}},
+            {{thing.yAxis}}
+        </div>
+    </div>
+</div>

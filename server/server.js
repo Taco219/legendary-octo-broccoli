@@ -2,7 +2,7 @@ import registerApi from './server.api';
 import { connectMongo } from './server.mongoose';
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const express = require('express');
 
 const app = express();
@@ -15,15 +15,14 @@ const start = async () => {
         // Parsers for POST data
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: false }));
+        app.use(cors());
+        app.use('/api', apiRoute);
 
-        const t = path.join(__dirname, '../dist');
-        console.log(t);
-        app.use(express.static(t));
 
-        app.use('/', apiRoute);
-
+        const out = path.join(__dirname, '../dist');
+        app.use(express.static(out));
         app.get('*', (req, res) => {
-            res.sendFile('D:\\Projects\\node\\legendary-octo-broccoli\\dist\\index.html');
+            res.sendFile(out+'/index.html');
         });
 
         app.listen(3000);

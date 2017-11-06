@@ -13,10 +13,6 @@ gulp.task('nodemon', function () {
         verbose: true,
         nodeArgs: [],
         args: [process.argv[2]]
-    }).on('restart', function () {
-        // setTimeout(function () {
-        //     browserSync.reload();
-        // }, 1000);
     });
 });
 
